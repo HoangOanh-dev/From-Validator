@@ -31,64 +31,96 @@ h2{
     margin: 0 0 20px;
 }
 
-.form{
-   padding: 30px 40px; 
+:root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  --input-border: #dcdcdc;
+  --input-focus: #3498db;
+  --label-color: #666;
 }
 
-.form-control{
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    position: relative;
+/* ===== Form Wrapper ===== */
+.form {
+  padding: 40px 50px;
+  background-color: #fff;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
-.form-control label{
-    color: #777;
-    display: block;
-    margin-bottom: 5px;
+/* ===== Form Control Group ===== */
+.form-control {
+  margin-bottom: 20px;
+  position: relative;
 }
 
-.form-control input{
-    border: 2px solid #f0f0f0;
-    border-radius: 4px;
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
+.form-control label {
+  color: var(--label-color);
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 15px;
 }
 
-.form-control input:focus{
-    outline: 0;
-    border-color: #777;
+/* ===== Input Styling ===== */
+.form-control input {
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+  background-color: #fafafa;
 }
 
-.form-control.success input{
-    border-color: var(--success-color);
+.form-control input:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  background-color: #fff;
 }
 
-.form-control.error input{
-    border-color: var(--error-color);
+/* ===== Validation States ===== */
+.form-control.success input {
+  border-color: var(--success-color);
 }
 
-.form-control small{
-    color: var(--error-color);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    visibility: hidden;
+.form-control.error input {
+  border-color: var(--error-color);
 }
 
-.form-control.error small{
-    visibility: visible;
+/* ===== Error Message ===== */
+.form-control small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  font-size: 13px;
+  visibility: hidden;
+  transition: 0.3s ease;
 }
 
-.form button{
-    cursor: pointer;
-    background-color: #3498db;
-    border: 2px solid #3498db;
-    border-radius: 4px;
-    color: #fff;
-    display: block;
-    font-size: 16px;
-    padding: 10px;
-    margin-top: 20px;
-    width: 100%;
+.form-control.error small {
+  visibility: visible;
+}
+
+/* ===== Submit Button ===== */
+.form button {
+  cursor: pointer;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 12px;
+  margin-top: 30px;
+  width: 100%;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
 }
